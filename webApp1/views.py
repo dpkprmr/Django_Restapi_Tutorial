@@ -4,7 +4,7 @@ from django.template.loader import get_template
 from .models import Update_data
 import json  # used in earlier format
 from django.views.generic import View
-from API_Tutorial.mixins import JsonResponseMixin
+from API_Tutorial.mixins import jsonResponseMixin
 from django.core.serializers import serialize
 
 
@@ -36,7 +36,7 @@ class jsonCBV(View):
         return JsonResponse(data)
 
 
-class jsonCBV2(JsonResponseMixin, View):
+class jsonCBV2(jsonResponseMixin, View):
     def get(self, request, *args, **kwargs):
         data = {
             "count": 1000,
