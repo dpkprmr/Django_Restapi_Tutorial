@@ -1,4 +1,4 @@
-"""Restapi_Tutorial URL Configuration
+"""API_Tutorial URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from webApp1.views import json_example_view
+from webApp1.views import jsonCBV
+from webApp1.views import jsonCBV2
+from webApp1.views import serializeListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('json/example', json_example_view),
+    path('json/class-based-view/', jsonCBV.as_view()),
+    path('json/class-based-view-2/', jsonCBV2.as_view()),
+    path('json/Serialize/', serializeListView.as_view()),
 ]
